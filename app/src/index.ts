@@ -1,5 +1,12 @@
-function hello(name: string): string {
-  return `Hello, ${name}!`;
-}
+import * as express from "express";
 
-console.log(hello("World"));
+const PORT = 8080;
+const HOST = "0.0.0.0";
+
+const app = express();
+app.get("/", (_, res) => {
+  res.send("Hello World\n");
+});
+
+app.listen(PORT, HOST);
+console.log(`Local port is ${PORT}`);
